@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {{> headswiper }}
+</head>
+<style>
+    body{
+        background: #fff !important;
+    }
+    .header{
+        border: none;
+    }
+</style>
+<body >
+    <div class="wrapper">
+        
+        {{> header }}
+
+        
+        <main class="main">
+            {{> body }}
+        </main>
+        
+    
+        {{> footer }}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+         var swiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                loop: true
+             });
+        var textarea = document.getElementsByTagName('textarea')[0];
+            textarea.addEventListener('keydown', resize);
+            function resize() {
+            var el = this;
+            setTimeout(function() {
+            el.style.cssText = 'height:auto; padding:0';
+            el.style.cssText = 'height:' + el.scrollHeight + 'px';
+            }, 1);
+            }
+    </script>
+    <script>
+        $('.header__nav-close').click(function(){
+            $('.header__list-drop').removeClass('active');
+            $('.header__service').removeClass('active');
+            $('.header').removeClass('active'); 
+            $('body').removeClass('fixed'); 
+            $('.burger').removeClass('active');            
+        });
+
+            var $page = $('html, body');
+            $('a[href*="#"]').click(function() {               
+                $page.animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top - 150
+                
+                }, 1000);
+                return false;
+            });
+    </script> 
+</body>
+</html>

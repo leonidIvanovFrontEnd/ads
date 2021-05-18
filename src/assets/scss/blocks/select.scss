@@ -1,0 +1,92 @@
+.select {
+  position: relative;
+  margin-left: -1px;
+}
+
+.select__item {
+  position: relative;
+}
+
+.select__title {
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.select__value {
+  padding-left: 12px;
+  height: 42px;
+  color: #fff;
+  font-family: $font1;
+  font-weight: 700;
+  @include adaptiv-value('font-size', 16, 13, 1);
+  display: flex;
+  align-items: center;
+  background: #000;
+  background: #6A8ADD;
+  transition-delay: .1s;
+  border-radius: 8px 0 0 8px;
+  width: 113px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.select__value span {
+  height: 1em;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.select__value::before {
+  content: "";
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+  width: 11px;
+  height: 7px;
+  background: url("../images/svg/arrowdownselect.svg") center / 100% no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+  margin-right: 10px;
+}
+
+.select__options {
+  color: #fff;
+  font-weight: 700;
+  display: none;
+  position: absolute;
+  top: 40px;
+  border-radius: 0 0 4px 4px;
+  min-width: 100%;
+  left: 0px;
+  background-color: #6A8ADD;
+  border-top: 0;
+  border-top: 0;
+  @include adaptiv-value('font-size', 16, 13, 1);
+  padding: 0px 0px 0px 0px;
+}
+
+.select__option {
+  cursor: pointer;
+  padding: 10px 12px;
+  margin: 0px 0px 0px 0px;
+}
+
+.select._active {
+  z-index: 5;
+
+  .select__value {
+    border-radius: 8px 0 0 0;
+    transition-delay: 0s;
+  }
+}
+
+.select._active .select__value::before {
+  transform: rotate(-180deg);
+}
+
+.select._active.select__options {
+  display: block;
+}

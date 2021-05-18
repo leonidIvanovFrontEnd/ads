@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+@import "vars";
+@import "vendor/reset";
+
+// Адаптивное свойство
+$maxWidth: 1920;
+$maxWidthContainer: 1250;
+
+@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+        // Только если меньше контейнера
+        #{$property}: $startSize + px;
+
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw + 24px - 320px) / #{$maxWidthContainer - 320}));
+        }
+    }
+
+    @else if $type==2 {
+        // Только если больше контейнера
+        #{$property}: $startSize + px;
+
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw + 24px - 320px) / #{$maxWidth - 320}));
+        }
+    }
+
+    @else {
+        // Всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw + 24px - 320px) / #{$maxWidth - 320}));
+    }
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #F9FBFC;
+    font-size: 1.4rem;
+    color: $gray;
+    font-family: $font1;
+
+}
+
+.title {
+    font-weight: 700;
+    color: $black;
+    text-align: center;
+    letter-spacing: 0.05em;
+    @include adaptiv-value('font-size', 40, 32, 1);
+
+    @media (max-width:500px) {
+        font-size: 32px;
+        text-align: left;
+        letter-spacing: 0.04em;
+        line-height: 39px;
+    }
+
+}
+
+.wrapper {
+    width: 100%;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    background: #F9DB6D;
+    border-radius: 27.5px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $silver;
+    padding: 13px 50px;
+    width: fit-content;
+    @include adaptiv-value('padding-left', 50, 30, 1);
+    @include adaptiv-value('padding-right', 50, 30, 1);
+    @include adaptiv-value('height', 55, 50, 1);
+    flex-shrink: 0;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 25px;
+    transition: .4s;
+
+    &:hover {
+        background: darken(#F9DB6D, 10%);
+
+    }
+
+    @media (max-width:760px) {
+        height: 58px;
+    }
+
+
+}
+
+.wave1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 100%;
+    @include adaptiv-value('width', 1000, 30, 0);
+    @include adaptiv-value('height', 740, 20, 0);
+}
+
+body.fixed {
+    overflow: hidden;
+
+}
+
+@media (max-width:1110px) {
+    .wave1 {
+        display: none;
+    }
+}
+
+
+// ---------  Blocks
+@import "blocks/header";
+@import "blocks/breads";
+@import "blocks/select";
+@import "blocks/generator";
+@import "blocks/footer";
+@import "blocks/burger";
+@import "blocks/home";
+@import "blocks/oursuccessful";
+@import "blocks/case";
+@import "blocks/maincontacts";
+@import "blocks/thank";
+@import "blocks/popup";
+
+// ---------  Blocks

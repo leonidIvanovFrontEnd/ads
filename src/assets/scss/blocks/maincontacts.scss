@@ -1,0 +1,272 @@
+.maincontacts {
+  background: #F9FBFC;
+  padding-bottom: 112px;
+
+  .container {
+    max-width: 1020px;
+  }
+
+  .wave1 {
+    @include adaptiv-value('width', 700, 30, 0);
+    z-index: 2;
+    @include adaptiv-value('height', 640, 20, 0);
+  }
+
+  .title {
+    @include adaptiv-value('margin-top', 60, 40, 1);
+  }
+
+  &__wrapper {
+
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+  }
+
+  &__ind {
+    @include adaptiv-value('margin-top', 80, 50, 1);
+    display: flex;
+    position: relative;
+    z-index: 5;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__box {
+    position: relative;
+    padding: 40px 0;
+
+    h3 {
+      @include adaptiv-value('font-size', 18, 15, 1);
+      font-weight: 700;
+      line-height: 1.3;
+      color: #555566;
+      margin-bottom: 6px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: rgba(106, 138, 221, 0.2);
+      border-radius: 20px;
+    }
+
+    &:last-child::before {
+      display: none;
+    }
+  }
+
+  &__wrapper-link {
+    color: #33A5F8;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 40px;
+    @include adaptiv-value('font-size', 24, 19, 1);
+  }
+
+  &__wrapper-link:nth-child(4) {
+    margin-bottom: 0;
+  }
+
+  &__box:nth-child(2) {
+
+    p {
+      max-width: 170px;
+      font-size: 20px;
+      font-weight: 400;
+      color: #555566;
+      line-height: 1.6;
+    }
+  }
+
+  &__box-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 18px;
+
+    li {
+      width: 50%;
+      margin-bottom: 16px;
+    }
+
+    li:nth-child(2n) {
+      display: flex;
+      padding-left: 20px;
+    }
+
+    a {
+      font-size: 20px;
+      font-weight: 400;
+      text-decoration: none;
+      color: #555566;
+      transition: .2s;
+
+      &:hover {
+        color: #33A5F8;
+      }
+    }
+  }
+
+  &__block {}
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    width: 534px;
+
+    input,
+    textarea {
+      font-size: 16px;
+      font-weight: 400;
+      font-family: $font1;
+      line-height: 1.625;
+      color: #555566;
+      border: none;
+      outline: none;
+      background: none;
+      margin-bottom: 33px;
+      border-bottom: 2px solid rgba(#80808D, 0.5);
+      min-height: 44px;
+
+      &::placeholder {
+        font-size: 16px;
+        font-weight: 400;
+        font-family: $font1;
+        color: #555566;
+        line-height: 1.625;
+      }
+
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 35px;
+      overflow: hidden;
+      line-height: 1.4;
+      resize: none;
+      transition: .4s;
+      padding-bottom: 15px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    color: #404053;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+
+  &__btn-wrapper {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 12px;
+      color: #6A6A79;
+      margin-left: 0px;
+      font-weight: 500;
+      max-width: 240px;
+      line-height: 1.6;
+
+      a {
+        color: #33A5F8;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__btn {}
+}
+
+@media (max-width:1150px) {
+  .maincontacts .container {
+    max-width: 790px;
+  }
+
+  .maincontacts__form {
+    width: 370px;
+  }
+
+  .maincontacts__box-list a {
+    font-size: 17px;
+  }
+
+  .maincontacts__box:nth-child(2) p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width:720px) {
+  .maincontacts__ind {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
+
+  .maincontacts__wrapper-link {
+    margin-bottom: 25px;
+  }
+
+  .maincontacts__form input,
+  .maincontacts__form textarea {
+    margin-bottom: 23px;
+    font-size: 15px;
+
+    &::placeholder {
+      font-size: 15px;
+    }
+  }
+
+  .maincontacts__title {
+    @include adaptiv-value('font-size', 35, 21, 1);
+    margin-bottom: 20px;
+  }
+
+  .maincontacts__wrapper {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .maincontacts__box {
+    padding: 30px 0;
+  }
+
+  .maincontacts__block {
+    width: 90%;
+  }
+
+  .maincontacts__form {
+    width: 100%;
+  }
+}
+
+@media (max-width:600px) {
+  .maincontacts__block {
+    width: 100%;
+  }
+
+}
+
+@media (max-width:400px) {
+  .maincontacts__btn-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .maincontacts__btn {
+    margin-top: 15px;
+    margin-right: 0;
+  }
+}

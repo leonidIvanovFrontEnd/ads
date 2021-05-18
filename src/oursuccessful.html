@@ -1,0 +1,149 @@
+---
+layout: default
+title: Cases
+---
+
+
+<nav class="breads"> 
+  <div class="container">
+    <ul class="">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="#">Cases</a>
+      </li>
+    </ul>
+  </div> 
+</nav>
+
+<section class="oursuccessful">
+  <img class="wave1" src="assets/images/bgwave.png" alt="">
+  <img  class="wave4" src="assets/images/bg/wave4.svg" alt="">
+  <img  class="wave5" src="assets/images/bg/wave5.svg" alt="">
+  <div class="container">
+    <h2 class="title">our Successful Campaigns</h2>
+    <ul class="oursuccessful__list">
+      <li class="active">All Projects</li>
+      <li class="oursuccessful__list-google google ">Google Ads</li>
+      <li class="oursuccessful__list-instagram instagram">Instagram Ads</li>
+      <li class="oursuccessful__list-facebook facebook">Facebook Ads</li>           
+    </ul>
+ 
+    <div class="oursuccessful__wrapper">
+      <a href="case.html" class=" oursuccessful__box oursuccessful__box-facebook active">
+        <div class="oursuccessful__image">          
+          <picture>         
+            <source srcset="assets/images/photo/image1.webp 1x, assets/images/photo/image1@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image1.jpg" srcset="assets/images/photo/image1@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Facebook Ads</p>
+        <h3>UC Browser</h3>
+      </a>
+      <a href="#" class="oursuccessful__box oursuccessful__box-google active">
+        <div class="oursuccessful__image">    
+          <picture>         
+            <source srcset="assets/images/photo/image2.webp 1x, assets/images/photo/image2@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image2.jpg" srcset="assets/images/photo/image2@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Google Ads</p>
+        <h3>Ozon App</h3>
+      </a>
+      <a href="#" class="oursuccessful__box oursuccessful__box-instagram active">
+        <div class="oursuccessful__image">    
+          <picture>         
+            <source srcset="assets/images/photo/image3.webp 1x, assets/images/photo/image3@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image3.jpg" srcset="assets/images/photo/image3@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Instagram Ads</p>
+        <h3>IQ Option Affiliate</h3>
+      </a>
+      <a href="#" class="oursuccessful__box oursuccessful__box-google active">
+        <div class="oursuccessful__image">    
+          <picture>         
+            <source srcset="assets/images/photo/image4.webp 1x, assets/images/photo/image4@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image4.jpg" srcset="assets/images/photo/image4@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Google Ads</p>
+        <h3>IQ Option Affiliate</h3>
+      </a>
+      <a href="#" class="oursuccessful__box oursuccessful__box-instagram active">
+        <div class="oursuccessful__image">    
+          <picture>         
+            <source srcset="assets/images/photo/image5.webp 1x, assets/images/photo/image5@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image5.jpg" srcset="assets/images/photo/image5@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Instagram Ads</p>
+        <h3>IQ Option Affiliate</h3>
+      </a>
+      <a href="#" class="oursuccessful__box oursuccessful__box-facebook active">
+        <div class="oursuccessful__image">    
+          <picture>         
+            <source srcset="assets/images/photo/image6.webp 1x, assets/images/photo/image6@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image6.jpg" srcset="assets/images/photo/image6@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Facebook Ads</p>
+        <h3>IQ Option Affiliate</h3>
+      </a>
+      <a href="#" class="oursuccessful__box oursuccessful__box-instagram active">
+        <div class="oursuccessful__image">    
+          <picture>         
+            <source srcset="assets/images/photo/image7.webp 1x, assets/images/photo/image7@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image7.jpg" srcset="assets/images/photo/image7@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Instagram Ads</p>
+        <h3>IQ Option Affiliate</h3>
+      </a>
+      <a href="#" class="oursuccessful__box  oursuccessful__box-facebook active">
+        <div class="oursuccessful__image">    
+          <picture>         
+            <source srcset="assets/images/photo/image8.webp 1x, assets/images/photo/image8@2x.webp 2x" type="image/webp">
+            <img src="assets/images/photo/image8.jpg" srcset="assets/images/photo/image8@2x.jpg 2x" alt="">
+          </picture> 
+        </div>
+        <p>Facebook Ads</p>
+        <h3>IQ Option Affiliate</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  const generatorList = document.querySelectorAll('.oursuccessful__list>li');  
+  const instagram = $('.instagram');
+  const google = $('.google');
+  const facebook = $('.facebook');
+  // Табы google adwords, Вк, Facebook и т.д
+  for (let generatorItem of generatorList) {      
+      generatorItem.addEventListener('click', function(){
+        $('.oursuccessful__box').removeClass('active');
+        $('.oursuccessful__list>li').removeClass('active');
+        this.classList.add('active');
+        if (instagram.hasClass('active')){
+            $('.oursuccessful__box-instagram').addClass('active')
+        }  
+         else if (google.hasClass('active')){
+          $('.oursuccessful__box-google').addClass('active')
+        } 
+          else if (facebook.hasClass('active')){
+          $('.oursuccessful__box-facebook').addClass('active')
+          console.log('facebook')
+        } else {
+          $('.oursuccessful__box').addClass('active');
+        }
+    })
+   
+    
+  }
+
+  // Табы google adwords, Вк, Facebook и т.д
+  
+</script>

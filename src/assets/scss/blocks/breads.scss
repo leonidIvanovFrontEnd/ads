@@ -1,0 +1,46 @@
+.breads {
+  margin-top: 40px;
+  position: relative;
+  z-index: 5;
+
+  ul {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    color: $gray;
+    font-size: 14px;
+    text-decoration: none;
+    position: relative;
+    padding: 0 12px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      display: block;
+      margin-top: 1px;
+      width: 12px;
+      transform: translate(50%, -50%);
+      height: 8px;
+      background-image: url(../images/svg/breadarrow.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+  }
+
+  li:last-child a {
+    color: #80808D;
+  }
+
+  li:first-child a {
+    padding-left: 0;
+  }
+
+  li:last-child a::before {
+    display: none;
+  }
+}
